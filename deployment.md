@@ -67,7 +67,7 @@ aws ecr get-login-password --region $AWS_REGION | \
     $AWS_ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com
 
 # Build for linux/amd64 (required on Apple Silicon M1/M2/M3)
-docker build --platform linux/amd64 -t $ECR_REPO:latest .
+docker build -t $ECR_REPO:latest .
 
 # Tag and push
 docker tag $ECR_REPO:latest $ECR_IMAGE
